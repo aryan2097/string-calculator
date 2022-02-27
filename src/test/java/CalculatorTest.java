@@ -12,4 +12,9 @@ public class CalculatorTest {
         Assertions.assertThat(Calculator.add("10")).isEqualTo(10);
     }
 
+    @Test
+    void should_return_sum_for_two_numbers() {
+        Assertions.assertThat(Calculator.add("1,2")).isEqualTo(3);
+    }
+
 }
