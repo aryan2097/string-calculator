@@ -1,6 +1,9 @@
 public class Calculator {
+
+
     public static int add(String string) {
-        String[] inputNumbers = string.split(",");
+        String[] inputNumbers = modifiedString(string).split(delimiter(string));
+
         if (string.isEmpty())
         {
             return 0;
@@ -23,5 +26,19 @@ public class Calculator {
 
     private static int stringToInteger(String input){
         return Integer.parseInt(input);
+    }
+
+    private static String modifiedString(String input){
+        if (input.startsWith("//")){
+            return input.substring(4);
+        }
+        else return input;
+    }
+
+    private static String delimiter(String input){
+        if (input.startsWith("//")){
+            return input.substring(2,3);
+        }
+        else return ",|\n";
     }
 }

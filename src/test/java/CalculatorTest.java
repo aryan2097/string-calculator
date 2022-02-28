@@ -22,4 +22,14 @@ public class CalculatorTest {
         Assertions.assertThat(Calculator.add("3,5,7")).isEqualTo(15);
     }
 
+    @Test
+    void should_return_sum_of_unknown_numbers_split_by_comma_and_new_line_delimiter(){
+        Assertions.assertThat(Calculator.add("2,3\n5")).isEqualTo(10);
+    }
+
+    @Test
+    void should_return_sum_of_unknown_numbers_split_by_undefined_delimiter(){
+        Assertions.assertThat(Calculator.add("//;\n1;2;3")).isEqualTo(6);
+    }
+
 }
