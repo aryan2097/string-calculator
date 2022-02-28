@@ -5,13 +5,20 @@ public class Calculator {
         {
             return 0;
         }
-        else if (inputNumbers.length == 1) {
+        if (inputNumbers.length == 1) {
             return stringToInteger(string);
         }
         else if (!string.isEmpty()) {
-            return stringToInteger(inputNumbers[0]) + stringToInteger(inputNumbers[1]);
+            return doSum(inputNumbers);
         }
        return 0;
+    }
+    private static int doSum(String[] inputNumbers) {
+        int sum = 0;
+        for (int current =0; current< inputNumbers.length; current++){
+            sum += stringToInteger(inputNumbers[current]);
+        }
+        return sum;
     }
 
     private static int stringToInteger(String input){

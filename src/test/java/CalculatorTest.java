@@ -17,4 +17,9 @@ public class CalculatorTest {
         Assertions.assertThat(Calculator.add("1,2")).isEqualTo(3);
     }
 
+    @Test
+    void should_return_sum_of_unknown_amount_of_numbers(){
+        Assertions.assertThat(Calculator.add("3,5,7")).isEqualTo(15);
+    }
+
 }
